@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- Created by Ali Al-gharibawi on March29,2023-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Bug Smasher</title>
+    <style>
+      * {
+        background-color: #8da399;
+      }
+      canvas {
+        display: block;
+        margin: auto;
+        border: 5px solid;
+        border-image: linear-gradient(
+          to right,
+          #ff0000,
+          #ff7f00,
+          #ffff00,
+          #00ff00,
+          #0000ff,
+          #8b00ff
+        );
+        border-image-slice: 1;
+        background-size: 100%;
+        background-color: #00416a;
+        background-position: center;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        animation: glow 2s ease-in-out infinite;
+      }
+      @keyframes glow {
+        0% {
+          background-position-x: 0 0;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        50% {
+          background-position-x: 0 0;
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        100% {
+          background-position-x: 0 0;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        color: #fff;
+      }
+      .container button {
+        color: #ff0000;
+        background-color: #00416a;
+        align-items: center;
+        border-radius: 9px;
+      }
+      #bug {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="1000" height="500"></canvas>
+    <div class="container">
+      <p>Score: <span id="score">0</span></p>
+      <button id="reset-score">Reset Score</button>
+      <button id="reset-speed">Reset Speed</button>
+    </div>
+    <footer>
+      &copy; 2023 Ali Al-gharibawi - Centennial College - COMP 125
+    </footer>
+
+    <script src="game.js"></script>
+  </body>
+</html>
